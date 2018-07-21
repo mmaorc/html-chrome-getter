@@ -2,6 +2,7 @@ from selenium import webdriver
 import argparse
 import os
 from datetime import datetime
+import codecs
 
 
 class WebDriver:
@@ -37,5 +38,5 @@ if __name__ == '__main__':
         content = d.page_source
 
     print('Saving to file {}'.format(out_filepath))
-    with open(out_filepath, encoding='utf-8', mode='w') as f:
+    with codecs.open(out_filepath, "w", "utf-8-sig") as f:
         f.write(content)
